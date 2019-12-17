@@ -1,47 +1,97 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Sonic OC</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        /*<div> <img src="TrapsAre.png" width="350" height="350"> </div>*/
+        $(document).ready(function(){
+          $("button").click(function(){
+            $(".traps").toggleClass("image-fade");
+            $(".traps").toggleClass("hidden");
+            setTimeout(showResults, 3100);
+          });
+        });
+        var randomNum;
+        function showResults() {
+          randomNum = Math.round(Math.random() * 10);
+          if (randomNum % 2 == 1) { /*gay as hell*/
+            $(".preResults2").toggleClass("postResults2");
+          }
+          else { /*straight as hell*/
+            $(".preResults1").toggleClass("postResults1");
+          }
+        }
+    </script>
+    <title>Let's find out</title>
     <style>
-      h1 {
-        text-align: center;
-        text-transform: uppercase;
-        text-decoration: underline;
-      }
-      h3 {
-        text-transform: uppercase;
-        font-weight: bold;
-      }
-      p {
-        margin: 0px;
-      }
       body {
-        color: red;
-        background-color: black;
+        background-image: url("https://img2.gelbooru.com/images/a5/55/a555240df8005a7bc643153ddaaa9a58.png" );
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+      }
+      .preResults1 {
+        position: absolute;
+        visibility: hidden;
+      }
+      .preResults2 {
+        position: absolute;
+        visibility: hidden;
+      }
+      .traps {
+        padding: 0px;
+        border-radius: 10px;
+      }
+      .hidden {
+        visibility: hidden;
+      }
+      .center {
+        display: block;
+        margin: auto;
+        top: 18%;
+        left: 33%;
+        position: absolute;
+      }
+      .image-fade {
+        -webkit-transform:rotate(360deg);
+        -webkit-transition-duration: 3s;
+      }
+      .postResults1 {
+        text-align: center;
+        width: 100%;
+        display: block;
+        position: absolute;
+        margin: auto;
+        margin-top: 150px;
+        visibility: visible;
+      }
+      .postResults2 {
+        text-align: center;
+        width: 75%;
+        display: block;
+        position: absolute;
+        margin: auto;
+        margin-left: 200px;
+        visibility: visible;
+      }
+      button {
+        position: absolute;
+        top: 22%;
+        right: 37%;
+        background: transparent;
+        outline: none;
+        border: none;
+        height:550px;
+        width:550px;
+        font-size:0;
       }
     </style>
   </head>
   <body>
-    <h1>My sonic OC: Light the Hedgehog</h1>
-    <h5><div align="center">(No relation to death note)</div></h5>
-    <p><div align="center"><img height='300' width='200' src="Lightthehedgehog.png"></p>
-      <h3>This is the custom artwork that I had commisioned for him</div></h3>
-
-    </br><hr></br>
-
-    <h2>Their backstory (he is non-gender conforming):</h2>
-      <p> He is a hedgehog who grew up with shadow. When shadow the hdgehog killed his entire family he swore revengence and began to study the katana and became a katana expert weilding it with the force of a thousand hurricances.
-      This is the sword he uses:</p>
-      <img height='300' width='600' src="03e.jpg">
-
-    </br><hr></br>
-
-    <h2>Skills:</h2>
-    <ul>
-      <li>He wears a fedora</li>
-      <li>He can weild his sword left-handed</li>
-      <li>He once touched a girls hand in 3rd grade</li>
-    </ul>
-
+    <div class="center"><img class="traps" src="TrapsAre.png"></div>
+    <button>Click This</button>
+    <img src="NotGay.png" class="preResults1">
+    <img src="Gay.png" class="preResults2">
   </body>
 </html>
